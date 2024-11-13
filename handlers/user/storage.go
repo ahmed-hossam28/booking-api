@@ -1,16 +1,16 @@
 package user
 
 import (
-	"api-dev/database"
-	"api-dev/schemas"
+	"github.com/ahmed-hossam28/database"
+	"github.com/ahmed-hossam28/schemas"
 	"log"
 )
 
 var (
 	//db = database.GetPostgres()
-	//db = database.GetMysql()
+	db = database.GetMysql()
 	//db = database.GetInMemory()
-	db = database.GetSqlite()
+	//db = database.GetSqlite()
 )
 
 func init() {

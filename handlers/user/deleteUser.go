@@ -1,7 +1,7 @@
 package user
 
 import (
-	"api-dev/schemas"
+	"github.com/ahmed-hossam28/schemas"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

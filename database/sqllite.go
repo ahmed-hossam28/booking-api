@@ -23,7 +23,7 @@ func configSQLite() {
 	}
 	sqlite_, err = gorm.Open(sqlite.Open(path+"/main.db"), &gorm.Config{})
 	if err != nil {
-		log.Fatal(err)
+		logger.Fatal("Sqlite:", err.Error())
 	}
 }
 

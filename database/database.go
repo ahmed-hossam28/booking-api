@@ -1,13 +1,15 @@
 package database
 
 import (
+	"github.com/ahmed-hossam28/config"
 	"github.com/joho/godotenv"
-	"log"
 )
+
+var logger = config.NewSingletonLogger()
 
 func init() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		logger.Fatal(err.Error())
 	}
 }

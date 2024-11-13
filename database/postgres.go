@@ -1,10 +1,8 @@
 package database
 
 import (
-	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"log"
 	"os"
 )
 
@@ -14,15 +12,9 @@ var (
 
 func configPostgres() {
 	var err error
-	host := os.Getenv("POSTGRES_HOST")
-	port := os.Getenv("POSTGRES_PORT")
-	password := os.Getenv("POSTGRES_PASSWORD")
-	user := os.Getenv("POSTGRES_USER")
-	dbname := os.Getenv("POSTGRES_DB")
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s", host, user, password, dbname, port)
-	postgres_, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	postgres_, err = gorm.Open(postgres.Open(os.Getenv("DSN")), &gorm.Config{})
 	if err != nil {
-		log.Fatal("Postgres: ", err)
+		logger.Fatal("Postgres: ", err.Error())
 	}
 
 }

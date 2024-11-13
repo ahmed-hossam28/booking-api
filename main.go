@@ -1,6 +1,6 @@
 package main
 
-import "api-dev/router"
+import "github.com/ahmed-hossam28/router"
 
 func main() {
 	router.Setup()

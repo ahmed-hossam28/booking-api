@@ -1,12 +1,13 @@
 package router
 
 import (
+	"github.com/ahmed-hossam28/config"
 	"github.com/gin-gonic/gin"
-	"log"
 )
 
 func Setup() {
+	logger := config.NewSingletonLogger()
 	router := gin.Default()
 	routes(router)
-	log.Fatal(router.Run(":8080"))
+	logger.Fatal(router.Run(":8080"))
 }
